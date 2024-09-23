@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pancake Maker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pancake-image {
+            background-image: url('pancake.jpg');
+            height: 50vh;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        #totalPrice {
+            font-size: 24px;
+            font-weight: 600;
+            color: #e91e63;
+            text-align: center;
+            margin-top: 20px;
+            transition: transform 0.5s, color 0.5s;
+        }
+
+        .price-change {
+            transform: scale(1.1);
+            color: #ff5722;
+        }
+
+        .summary {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .pancake-image {
+                height: 30vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="pancake-image"></div>
+        <h1>Customize Your Pancake</h1>
+
+        <!-- Customer Name -->
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" placeholder="Enter your name" required>
+
+        <label for="pancakeType">Choose Pancake Type:</label>
+        <select id="pancakeType">
+            <option value="classic">Classic Pancake - $5</option>
+            <option value="blueberry">Blueberry Pancake - $6</option>
+            <option value="chocolate">Chocolate Pancake - $7</option>
+        </select>
+
+        <h2>Toppings ($1 each):</h2>
+        <label><input type="checkbox" class="topping" value="whippedCream"> Whipped Cream</label>
+        <label><input type="checkbox" class="topping" value="syrup"> Syrup</label>
+        <label><input type="checkbox" class="topping" value="fruit"> Fruit</label>
+        <label><input type="checkbox" class="topping" value="chocolateChips"> Chocolate Chips</label>
+
+        <h2>Extras:</h2>
+        <label><input type="checkbox" class="extra" value="whippedCream"> Whipped Cream ($2)</label>
+        <label><input type="checkbox" class="extra" value="syrup"> Syrup ($1.50)</label>
+        <label><input type="checkbox" class="extra" value="fruit"> Fruit ($2.50)</label>
+        <label><input type="checkbox" class="extra" value="chocolateChips"> Chocolate Chips ($3)</label>
+
+        <!-- Delivery Options -->
+        <h2>Delivery Method:</h2>
+        <label><input type="radio" name="delivery" value="eatIn" checked> Eat In</label>
+        <label><input type="radio" name="delivery" value="pickUp"> Pick Up</label>
+        <label><input type="radio" name="delivery" value="delivery"> Delivery ($5)</label>
+
+        <div id="totalPrice">$0.00</div>
+
+        <!-- Button to display the summary of the order -->
+        <button id="seeOrderBtn">See Order</button>
+
+        <!-- Order Summary Section -->
+        <div class="summary" id="orderSummary"></div>
+    </div>
+</body>
+<script src="pencake.js"></script>
+
+</html>
